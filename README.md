@@ -2,7 +2,7 @@
 
 An AI-powered document summarization application that extracts text from PDFs and images, generates concise summaries, identifies key points, and suggests improvements using Google's Gemini models.
 
-Deployed app: https://vercel.com/pradnyabackup8-gmailcoms-projects/document-summarizer
+Deployed app: https://document-summarizer-coral.vercel.app/
 
 ## Features
 
