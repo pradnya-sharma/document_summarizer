@@ -1,0 +1,5 @@
+# Approach
+
+This MVP uses React with TypeScript for a responsive, state-driven interface and FastAPI for a small, testable HTTP boundary. Keeping extraction and Gemini calls on the backend protects the API key and makes browser behavior predictable. PyMuPDF handles text-native PDFs, while Pillow and Tesseract cover scanned image uploads. The upload route performs validation before any processing and returns a single typed response so the frontend has one straightforward workflow.
+
+Gemini receives one bounded request containing the extracted document text and returns all three summary lengths, key points, and improvement suggestions in JSON. The response is validated with Pydantic before it reaches the UI. The deliberate tradeoff is in-memory, single-request processing: it keeps the assessment simple and deployable, while a production version could add chunk-level summarization, asynchronous jobs, persistent history, and richer OCR language support.
