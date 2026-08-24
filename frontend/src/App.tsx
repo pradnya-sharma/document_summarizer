@@ -54,7 +54,7 @@ export default function App() {
   };
 
   return <main className="app-shell" data-testid="document-summary-app">
-    <header className="topbar"><div className="brand-mark"><FileText size={18} /></div><span data-testid="app-name">Summary Desk</span><span className="topbar-note">Private document workspace</span></header>
+    <header className="topbar"><div className="brand-mark"><FileText size={18} /></div><span data-testid="app-name">Summary Desk</span></header>
     <section className="intro"><p className="eyebrow">DOCUMENT INTELLIGENCE</p><h1 data-testid="page-title">Document Summary<br /><em>Assistant</em></h1><p className="lede">Turn dense documents into clear, useful understanding — in seconds.</p></section>
     <section className="workspace">
       <div className="upload-column">
@@ -69,7 +69,7 @@ export default function App() {
         {!result ? <div className="empty-results" data-testid="empty-results"><div className="empty-icon"><FileText size={26} /></div><h2>Your summary will appear here</h2><p>Upload a document to see its key ideas, a focused summary, and ways to make it even clearer.</p></div> : <div className="results" data-testid="results-section"><div className="results-header"><div><p className="eyebrow">ANALYSIS COMPLETE</p><h2 data-testid="results-title">{result.filename}</h2></div><button className="text-button" onClick={reset} data-testid="start-over-button">New document</button></div>{result.processing_notice && <div className="notice" data-testid="processing-notice">{result.processing_notice}</div>}<div className="summary-block"><div className="block-header"><div><p className="eyebrow">SUMMARY</p><h3>Choose your level of detail</h3></div><div className="actions"><button className="secondary-button" onClick={copySummary} data-testid="copy-summary-button"><Copy size={15} /> Copy</button><button className="secondary-button" onClick={download} data-testid="download-summary-button"><Download size={15} /> Download</button></div></div><div className="tabs" role="tablist" data-testid="summary-tabs">{(["short", "medium", "long"] as const).map((tab) => <button key={tab} className={activeTab === tab ? "tab active" : "tab"} onClick={() => setActiveTab(tab)} role="tab" aria-selected={activeTab === tab} data-testid={`${tab}-summary-tab`}>{tab}<span>{tab === "short" ? "Quick read" : tab === "medium" ? "Balanced" : "Deep dive"}</span></button>)}</div><p className="summary-copy" data-testid="active-summary">{result.summary[activeTab]}</p></div><div className="insight-grid"><Insight title="Key points" items={result.key_points} testId="key-points" /><Insight title="Improvement suggestions" items={result.improvements} testId="improvement-suggestions" /></div></div>}
       </div>
     </section>
-    <footer>Built for thoughtful reading <span>·</span> Your files are processed for this request only</footer>
+    <footer>Your files are processed for this request only</footer>
   </main>;
 }
 
