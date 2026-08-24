@@ -319,11 +319,3 @@ pip install -r requirements.txt
 * Production deployment and environment management
 
 ---
-
-## License
-
-MIT License
-
----
-
-For a university submission or portfolio, I'd also add a **"Key Engineering Decisions"** section explaining why you chose FastAPI, Gemini, PyMuPDF, and structured JSON validation. That tends to impress reviewers more than just listing features.
